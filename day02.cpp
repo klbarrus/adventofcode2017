@@ -55,8 +55,6 @@ int main(int argc, char* argv[]) {
                     break;
                 }
             } while (std::prev_permutation(v.begin(), v.end()));
-
-
         }
         puzzle_in.close();
 
