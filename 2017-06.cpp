@@ -20,7 +20,6 @@ int main(int argc, char* argv[]) {
     puzzle_in.close();
 
     unsigned int cycles = 0;
-    long dist = 0;
     bool seenBefore = false;
     while (!seenBefore) {
         // find redistribution block
@@ -44,14 +43,15 @@ int main(int argc, char* argv[]) {
         auto it = std::find(state.begin(), state.end(), blocks);
         if (it != state.end()) {
             seenBefore = true;
-            dist = std::distance(it, state.end());
+            auto dist = std::distance(it, state.end());
+
+            std::cout << "part 1: " << cycles << '\n';
+            std::cout << "part 2: " << dist << '\n';
         } else {
             state.push_back(blocks);
         }
     }
 
-    std::cout << "part 1: " << cycles << '\n';
-    std::cout << "part 2: " << dist << '\n';
 
     return 0;
 }

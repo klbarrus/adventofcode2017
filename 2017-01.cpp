@@ -18,8 +18,8 @@ int captcha(std::string& first, std::string& second) {
         if (*xi == *yi) {
             sum += int(*xi) - int('0');
         }
-        *xi++;
-        *yi++;
+        xi++;
+        yi++;
     }
     return sum;
 }
@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
     puzz_dig = rtrim(puzz_dig);
     puzzle_in.close();
 
-    unsigned long len = puzz_dig.length();
+    auto len = puzz_dig.length();
     std::string puzz_one = puzz_dig;
     std::string puzz_two = puzz_dig;
     std::rotate(puzz_one.begin(), puzz_one.begin() + 1, puzz_one.end());
