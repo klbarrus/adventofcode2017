@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     if (argc > 1)
         puzzle_in.open(argv[1]);
     else
-	    puzzle_in.open("../2017-01.txt");
+	puzzle_in.open("../2017-01.txt");
     std::ostringstream puzzle_s;
     puzzle_s << puzzle_in.rdbuf();
     std::string puzz_dig = puzzle_s.str();
