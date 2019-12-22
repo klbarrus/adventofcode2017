@@ -1,0 +1,2 @@
+[workspace]
+members = ["aoclib", "aoc-2017-01", "aoc-2017-02"]
