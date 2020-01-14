@@ -1,5 +1,6 @@
 use aoclib;
 use itertools::Itertools;
+use std::cmp;
 use std::io;
 
 fn main() -> io::Result<()> {
@@ -18,11 +19,10 @@ fn main() -> io::Result<()> {
         checksum1 += max - min;
 
         for (a, b) in nums.iter().tuple_combinations() {
-            if a % b == 0 {
-                checksum2 += a / b;
-                break;
-            } else if b % a == 0 {
-                checksum2 += b / a;
+            let minab = cmp::min(a, b);
+            let maxab = cmp::max(a, b);
+            if maxab % minab == 0 {
+                checksum2 += maxab / minab;
                 break;
             }
         }
